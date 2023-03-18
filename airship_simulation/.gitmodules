@@ -1,0 +1,7 @@
+[submodule "LibrePilot"]
+	path = LibrePilot
+	url = https://github.com/Ootang2019/LibrePilot
+	branch = airship_control
+[submodule "rotors_simulator"]
+	path = rotors_simulator
+	url = https://github.com/Ootang2019/rotors_simulator

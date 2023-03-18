@@ -1,0 +1,23 @@
+rosbag record -O tmp_bag_change_name 
+/blimp/ground_truth/imu 
+/blimp/ground_truth/pose
+ /blimp/ground_truth/position 
+/blimp/ground_speed 
+/blimp/tail/pose 
+/blimp/tail/imu
+ /blimp/tail/position 
+/blimp/tail/transform 
+/blimp/motor_speed/0 
+/blimp/motor_speed/1 
+/blimp/motor_speed/2 
+/blimp/stick_joint_position_controller/command 
+/blimp/topfin_joint_position_controller/command 
+/blimp/botfin_joint_position_controller/command 
+/blimp/leftfin_joint_position_controller/command 
+/blimp/rightfin_joint_position_controller/command
+ /blimp/GCSACTUATORS
+ /blimp/command/motor_speed 
+/blimp/AutopilotInfo 
+/blimp/Octocopter 
+/blimp/TransmitterInfo 
+/blimp/octoPose 

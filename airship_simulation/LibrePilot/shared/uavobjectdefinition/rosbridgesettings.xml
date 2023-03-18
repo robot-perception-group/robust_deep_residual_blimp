@@ -1,0 +1,13 @@
+<xml>
+    <object name="ROSBridgeSettings" singleinstance="true" settings="true" category="System">
+        <description>ROSBridge Settings</description>
+        <field name="UpdateRate" units="updates" type="uint16" elementnames="Ping,State,Bias,Autopilot" defaultvalue="500,5,500,25" />
+        <field name="GeoFenceBoxMin" units="meters" type="float" elementnames="North,East,Down" defaultvalue="-30,-30,-20" />
+        <field name="GeoFenceBoxMax" units="meters" type="float" elementnames="North,East,Down" defaultvalue="30,30,-2" />
+
+        <access gcs="readwrite" flight="readwrite"/>
+        <telemetrygcs acked="true" updatemode="onchange" period="0"/>
+        <telemetryflight acked="true" updatemode="onchange" period="0"/>
+        <logging updatemode="manual" period="0"/>
+    </object>
+</xml>

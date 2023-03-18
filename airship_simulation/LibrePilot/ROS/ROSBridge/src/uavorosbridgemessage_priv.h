@@ -1,0 +1,1 @@
+../../../flight/modules/UAVOROSBridge/inc/uavorosbridgemessage_priv.h

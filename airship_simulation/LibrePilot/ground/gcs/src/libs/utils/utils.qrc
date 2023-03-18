@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/utils" >
+        <file>fonts/PTS75F.ttf</file>
+    </qresource>
+</RCC>

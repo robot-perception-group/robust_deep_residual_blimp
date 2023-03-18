@@ -1,0 +1,14 @@
+Header header
+int32 status
+float64 fractional_progress
+float64 error
+geometry_msgs/Vector3 pathDirection
+geometry_msgs/Vector3 pathCorrection
+float64 pathTime
+int32 Mode
+float64[4] ModeParameters
+geometry_msgs/Vector3 Start
+geometry_msgs/Vector3 End
+float64 StartingVelocity
+float64 EndingVelocity
+geometry_msgs/Vector3 VelocityDesired

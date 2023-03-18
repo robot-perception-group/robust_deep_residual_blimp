@@ -1,0 +1,16 @@
+<xml>
+    <object name="TemperatureSettings" singleinstance="true" settings="true" category="Sensors">
+        <description>Temperature sensor configuration.</description>
+        <field name="Lm35Sensitivity" units="V/C" type="float" elements="1" defaultvalue="0.01"/>
+        <field name="NtcVoltageReference" units="V" type="float" elements="1" defaultvalue="3.3"/>
+        <field name="NtcSerialResistor" units="Ohms" type="uint32" elements="1" defaultvalue="10000"/>
+        <field name="NtcNominalValue" units="Ohms" type="uint32" elements="1" defaultvalue="100000"/>
+        <field name="NtcNominalTemperature" units="C" type="uint16" elements="1" defaultvalue="25"/>
+        <field name="NtcBetaCoeff" units="K" type="uint16" elements="1" defaultvalue="4000"/>
+        <field name="NtcVoltageDivider" units="" type="enum" elements="1" options="NTCtoGround,NTCtoVref" defaultvalue="NTCtoGround"/>
+        <access gcs="readwrite" flight="readwrite"/>
+        <telemetrygcs acked="true" updatemode="onchange" period="0"/>
+        <telemetryflight acked="true" updatemode="onchange" period="0"/>
+        <logging updatemode="manual" period="0"/>
+    </object>
+</xml>

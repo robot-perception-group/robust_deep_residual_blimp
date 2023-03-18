@@ -1,0 +1,4 @@
+<launch>
+  <node type="rviz" name="rviz" pkg="rviz" args="-d ~/catkin_ws/src/AutonomousBlimpDRL/blimp_env/blimp_env/envs/rviz/planar_goal_env.rviz"
+  launch-prefix="gnome-terminal --"/>
+</launch>

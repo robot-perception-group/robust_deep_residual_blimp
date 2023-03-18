@@ -1,0 +1,103 @@
+<!DOCTYPE PathPlan>
+<waypoints>
+ <waypoint number="0">
+  <field value="" name="description"/>
+  <field value="48.7501290878072382" name="latitude"/>
+  <field value="9.1063851159752502" name="longitude"/>
+  <field value="70.7000000000000028" name="distance_to_home"/>
+  <field value="45.0000000000000000" name="bearing_from_home"/>
+  <field value="50.0000000000000000" name="altitude_above_home"/>
+  <field value="1" name="is_relative_to_home"/>
+  <field value="502,3014526367188" name="altitude"/>
+  <field value="2" name="velocity"/>
+  <field value="0" name="mode"/>
+  <field value="0" name="mode_param0"/>
+  <field value="0" name="mode_param1"/>
+  <field value="0" name="mode_param2"/>
+  <field value="0" name="mode_param3"/>
+  <field value="2" name="condition"/>
+  <field value="15" name="condition_param0"/>
+  <field value="0" name="condition_param1"/>
+  <field value="0" name="condition_param2"/>
+  <field value="0" name="condition_param3"/>
+  <field value="0" name="command"/>
+  <field value="2" name="jumpdestination"/>
+  <field value="1" name="errordestination"/>
+  <field value="0" name="is_locked"/>
+ </waypoint>
+ <waypoint number="1">
+  <field value="" name="description"/>
+  <field value="48.7501265808365147" name="latitude"/>
+  <field value="9.1050266863113780" name="longitude"/>
+  <field value="70.3053252517023424" name="distance_to_home"/>
+  <field value="314.9999999994135464" name="bearing_from_home"/>
+  <field value="50.0000000000000000" name="altitude_above_home"/>
+  <field value="1" name="is_relative_to_home"/>
+  <field value="502,3014526367188" name="altitude"/>
+  <field value="2" name="velocity"/>
+  <field value="0" name="mode"/>
+  <field value="0" name="mode_param0"/>
+  <field value="0" name="mode_param1"/>
+  <field value="0" name="mode_param2"/>
+  <field value="0" name="mode_param3"/>
+  <field value="2" name="condition"/>
+  <field value="15" name="condition_param0"/>
+  <field value="0" name="condition_param1"/>
+  <field value="0" name="condition_param2"/>
+  <field value="0" name="condition_param3"/>
+  <field value="0" name="command"/>
+  <field value="3" name="jumpdestination"/>
+  <field value="2" name="errordestination"/>
+  <field value="0" name="is_locked"/>
+ </waypoint>
+ <waypoint number="2">
+  <field value="" name="description"/>
+  <field value="48.7492324140720754" name="latitude"/>
+  <field value="9.1050251800438868" name="longitude"/>
+  <field value="70.4629300746607470" name="distance_to_home"/>
+  <field value="225.0000000001451781" name="bearing_from_home"/>
+  <field value="50.0000000000000000" name="altitude_above_home"/>
+  <field value="1" name="is_relative_to_home"/>
+  <field value="502,3014526367188" name="altitude"/>
+  <field value="2" name="velocity"/>
+  <field value="0" name="mode"/>
+  <field value="0" name="mode_param0"/>
+  <field value="0" name="mode_param1"/>
+  <field value="0" name="mode_param2"/>
+  <field value="0" name="mode_param3"/>
+  <field value="2" name="condition"/>
+  <field value="15" name="condition_param0"/>
+  <field value="0" name="condition_param1"/>
+  <field value="0" name="condition_param2"/>
+  <field value="0" name="condition_param3"/>
+  <field value="0" name="command"/>
+  <field value="4" name="jumpdestination"/>
+  <field value="3" name="errordestination"/>
+  <field value="0" name="is_locked"/>
+ </waypoint>
+ <waypoint number="3">
+  <field value="" name="description"/>
+  <field value="48.7492309081790083" name="latitude"/>
+  <field value="9.1063851038003634" name="longitude"/>
+  <field value="70.7000000000000028" name="distance_to_home"/>
+  <field value="135.0000000000000000" name="bearing_from_home"/>
+  <field value="50.0000000000000000" name="altitude_above_home"/>
+  <field value="1" name="is_relative_to_home"/>
+  <field value="502,3014526367188" name="altitude"/>
+  <field value="2" name="velocity"/>
+  <field value="0" name="mode"/>
+  <field value="0" name="mode_param0"/>
+  <field value="0" name="mode_param1"/>
+  <field value="0" name="mode_param2"/>
+  <field value="0" name="mode_param3"/>
+  <field value="2" name="condition"/>
+  <field value="15" name="condition_param0"/>
+  <field value="0" name="condition_param1"/>
+  <field value="0" name="condition_param2"/>
+  <field value="0" name="condition_param3"/>
+  <field value="0" name="command"/>
+  <field value="1" name="jumpdestination"/>
+  <field value="4" name="errordestination"/>
+  <field value="0" name="is_locked"/>
+ </waypoint>
+</waypoints>

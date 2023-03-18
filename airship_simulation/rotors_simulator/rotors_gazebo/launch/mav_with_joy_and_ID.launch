@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<launch>
+  <arg name="mav_name" default="firefly"/>
+  <arg name="world_name" default="basic"/>
+  <arg name="enable_logging" default="false" />
+  <arg name="enable_ground_truth" default="true" />
+  <arg name="log_file" default="$(arg mav_name)" />
+  <arg name="roboID" default="0"/>
+  <arg name="X" default="-9.0"/>
+  <arg name="Y" default="-9.0"/>
+  <arg name="Z" default="0.1"/>
+
+  <group ns="$(arg mav_name)_$(arg roboID)">
+    <include file="$(find rotors_gazebo)/launch/spawn_mav.launch">
+      <arg name="mav_name" value="$(arg mav_name)" />
+      <arg name="namespace" value="$(arg mav_name)_$(arg roboID)" />
+      <arg name="model" value="$(find rotors_description)/urdf/firefly_with_kineckt.gazebo" />
+      <arg name="enable_logging" value="$(arg enable_logging)" />
+      <arg name="enable_ground_truth" value="$(arg enable_ground_truth)" />
+      <arg name="log_file" value="$(arg log_file)"/>
+      <arg name="x" default="$(arg X)"/>
+      <arg name="y" default="$(arg Y)"/>
+      <arg name="z" default="$(arg Z)"/>
+    </include>
+    <!-- Here is the right way to run the joystick and use it to control the robot.-->
+    <!--    <node name="joy_node" pkg="joy" type="joy_node" />
+        <node name="rotors_joy_interface" pkg="rotors_joy_interface" type="rotors_joy_interface" >
+        <param name="axis_roll_" value="3" type="int" />
+        <param name="axis_pitch_" value="4" type="int" />
+        <param name="axis_thrust_" value="1" type="int" />
+        <param name="axis_yaw_" value="0" type="int" />
+        <param name="button_yaw_left_" value="4" type="int" />
+        <param name="button_yaw_right_" value="5" type="int" />
+        </node>
+        <node name="roll_pitch_yawrate_thrust_controller_node" pkg="rotors_control" type="roll_pitch_yawrate_thrust_controller_node" output="screen">
+        <rosparam
+            command="load" file="$(find rotors_gazebo)/resource/roll_pitch_yawrate_thrust_controller_$(arg mav_name).yaml" />
+        <rosparam command="load" file="$(find rotors_gazebo)/resource/$(arg mav_name).yaml" />
+        <remap from="odometry" to="odometry_sensor1/odometry" />
+        </node>-->
+    <node name="lee_position_controller_node" pkg="rotors_control" type="lee_position_controller_node" output="screen">
+      <rosparam command="load" file="$(find rotors_gazebo)/resource/lee_controller_firefly.yaml" />
+      <rosparam command="load" file="$(find rotors_gazebo)/resource/firefly.yaml" />
+      <remap from="odometry" to="/$(arg mav_name)_$(arg roboID)/odometry_sensor1/odometry" />
+    </node>
+    <node name="robot_state_publisher_mavs_$(arg roboID)" pkg="robot_state_publisher" type="robot_state_publisher" />
+    <node name="joint_state_publisher_$(arg roboID)" pkg="joint_state_publisher" type="joint_state_publisher" />
+    <node name="waypoint_publisher_$(arg roboID)" pkg="rotors_gazebo" type="waypoint_publisher" output="screen" args="$(arg roboID) -9 2 0 5"/>
+  </group>
+
+</launch>

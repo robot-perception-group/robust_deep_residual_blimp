@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<launch>
+
+    <arg name="robotID" default="1" />
+    <arg name="numRobots" default="1" />
+    <arg name="gpuHost" default="localhost" />
+    <arg name="gpuPort" default="9900" />
+    <arg name="librepilotBasePort" default="9002" />
+    <arg name="librepilotOffset" default="100" />
+    <arg name="librepilotPort" default="$(eval arg('librepilotBasePort') + arg('librepilotOffset')*(arg('robotID')-1) )" />
+    <arg name="librepilotIP" default="127.0.0.1" />
+    <arg name="librepilotUseUDP" default="true" />
+    <arg name="librepilotBaud" default="115200" />
+    <arg name="librepilotDevice" default="/dev/flightcontroller_serial" />
+    <arg name="rvizView" default="false" />
+    <arg name="addOffset" default="false"/>
+    <arg name="addCovariance" default="true"/>
+    <arg name="max_update_force" default="true"/>
+    <arg name="max_update_rate" default="4"/>
+    <arg name="comSuccessRate" default="100"/>
+    <arg name="X" default="0.0"/>
+    <arg name="Y" default="0.0"/>
+    <arg name="Z" default="1.0"/>
+
+	<!--
+        <arg name="cameraStaticPublish" value="true"/>
+        <arg unless="$(arg rvizView)" name="dontPublishTFs" value="true"/>
+        <arg if="$(arg rvizView)" name="dontPublishTFs" value="false"/>
+
+	<arg if="$(arg addCovariance)" name="covarianceX" value="0.5"/>
+	<arg if="$(arg addCovariance)" name="covarianceY" value="0.5"/>
+	<arg if="$(arg addCovariance)" name="covarianceZ" value="1.0"/>-->
+
+	<!--HACKED offset compensation due to different global frame-->
+	<!--<arg if="$(arg addOffset)" name="HACK_OFFSET" value="[-1.6140871346,-0.725805521,-1.4716273546]"/>-->
+        
+    <group ns="machine_$(arg robotID)">
+	    <arg name="name" value="librepilot_node_$(arg robotID)" />
+	    <node name="$(arg name)" pkg="librepilot" type="librepilot_node" output="screen" args="/machine_$(arg robotID) UDP $(arg librepilotIP) $(arg librepilotPort)">
+		    <remap from="/machine_$(arg robotID)/offset" to="/machine_$(arg robotID)/target_tracker/offset" />
+	    </node>
+    </group>
+
+    <!-- the blimp -->
+    <include file="$(find blimp_description)/launch/blimp_only.launch">
+        <arg name="uav_name" value="machine_$(arg robotID)" />
+        <arg name="X" value="$(arg X)" />
+        <arg name="Y" value="$(arg Y)" />
+        <arg name="Z" value="$(arg Z)" />
+
+    </include>
+</launch>

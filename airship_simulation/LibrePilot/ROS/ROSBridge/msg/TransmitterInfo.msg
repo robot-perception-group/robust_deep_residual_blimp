@@ -1,0 +1,11 @@
+Header header
+int32 ROSControlled
+int32 Armed
+int32 FlightModeSwitch
+float64 Roll
+float64 Pitch
+float64 Yaw
+float64 Thrust
+float64 Collective
+float64 Throttle
+float64[4] Accessory

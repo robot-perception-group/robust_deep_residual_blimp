@@ -1,0 +1,27 @@
+This repository is based on code from the LibrePilot project
+
+It containts the following primary additions by the AIRCAP project:
+
+/flight/modules/UAVOROSBridge:
+This is a firmware component which allows realtime exchange of Flight Controller telemetry data (including pose state estimate) with ROS, as well as sending waypoint and position of interest data from ROS to the flight controller. Currently it is only compiled for the "revolution" firmware target, but it should in theory work with all next generation flight controllers that use the full "StateEstimation" sensor fusion package on the firmware side with trivial modifications (such as enabling the module in the Makefiles and configuring the COM port configuration in /flight/target/boards. Use the config for revolution as a template.
+
+
+/ground/TelemetryBridge:
+This is a small tcp server component which allows remote UAVTalk telemetry connections via TCPIP to a flight controller connected via USB. It also logs telemetry raw dumps to disk in the format expected by the Librepilot GCS software. It is not integrated/compiled with the main makefile yet.
+
+
+/ROS/ROSBridge:
+This is a ROS package that allows integration of a LibrePilot into Robot Operating System. Link this directory into your catkin workspace src folder. The node is called librepilot_node. To run it expects the virtual COM port created by the flight controller on a Linux machine.
+
+
+/flight/pios:
+Some additional drivers have been added for Hisystems Octocopter digital speed controllers (Mikrokopter.de) and external Magnetometers. These are optional depending on the flight hardware used.
+
+
+For compilation follow the LibrePilot documentation (see librepilot.org) to compile both GCS and firmware. Firmware can be flashed on the flight controller using the GCS.
+
+All Code contributed by AIRCAP is copyright Max Planck Society - Institute of intelligent Systems - 2017, and to be used and redistributed  under the conditions of the GNU GPL version 3 (or higher) license.
+
+For further inquiries about our modifications contact <eric.price@tuebingen.mpg.de>.
+For general questions about usage of LibrePilot please ask the helpful Librepilot community under https://librepilot.org.
+
