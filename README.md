@@ -122,7 +122,7 @@ roslaunch turtlebot multi.launch
 ```
 
 Open a new terminal. Then train 12 agents using 3 seeds per group (group 1: PID, q=0; group 2: Hinf, q=0; group 3: PID, q~Normal(0, 1); 
-group 4: Hinf, q~Normal(0, 1);)  
+group 4: Hinf, q~Normal(0, 1).)  
 ```console
 python3 ~/catkin_ws/src/turtlebot/scripts/RL.py
 ```
