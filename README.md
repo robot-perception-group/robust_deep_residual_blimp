@@ -54,7 +54,10 @@ In the same catkin_ws as airship_simulation:
 1. setup bimp_env
 ```console
 cd ~/catkin_ws/src
-git clone -b master https://github.com/robot-perception-group/robust_deep_residual_blimp.git
+git init
+git remote add origin https://github.com/robot-perception-group/robust_deep_residual_blimp.git
+git fetch origin
+git checkout origin/master -f
 cd ~/catkin_ws/src/AutonomousBlimpDRL/blimp_env
 pip install .
 ```
