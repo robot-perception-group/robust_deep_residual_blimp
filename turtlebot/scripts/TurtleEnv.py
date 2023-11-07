@@ -120,7 +120,7 @@ class TurtleEnv(gym.Env):
             self.noise_lim = noise_lim
         if self.teacher:
             dt = 1 / rate
-            os.chdir("/home/yang/catkin_ws/src/turtlebot/scripts/")
+            os.chdir(os.path.expanduser("~/catkin_ws/src/turtlebot/scripts"))
             content = scipy.io.loadmat("matlab.mat")
             # SISO-hinf for v
             K1_A = content['K1_A']
